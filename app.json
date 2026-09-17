@@ -1,25 +1,76 @@
 {
   "expo": {
-    "name": "active-aging-app",
+    "name": "Active Aging",
     "slug": "active-aging-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "scheme": "activeaging",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.activeaging.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Active Aging needs access to your camera so you can take a profile photo.",
+        "NSPhotoLibraryUsageDescription": "Active Aging needs access to your photos so you can choose a profile picture.",
+        "NSCalendarsUsageDescription": "Active Aging needs access to your calendar to schedule your community activities and reminders.",
+        "NSCalendarsFullAccessUsageDescription": "Active Aging needs access to your calendar to schedule your community activities and reminders."
+      }
     },
     "android": {
+      "package": "com.activeaging.app",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "backgroundColor": "#2D7D6F",
+        "foregroundImage": "./assets/android-icon-foreground.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_CALENDAR",
+        "android.permission.WRITE_CALENDAR",
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#2D7D6F",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Active Aging needs access to your photos so you can choose a profile picture.",
+          "cameraPermission": "Active Aging needs access to your camera so you can take a profile photo."
+        }
+      ],
+      [
+        "expo-calendar",
+        {
+          "calendarPermission": "Active Aging needs access to your calendar to schedule your community activities and reminders."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "7a41401c-6419-4899-b750-715265865f42"
+      }
+    },
+    "owner": "coool777"
   }
 }
