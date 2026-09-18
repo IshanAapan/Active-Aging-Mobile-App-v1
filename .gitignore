@@ -43,4 +43,5 @@ yarn-error.*
 # AI / assistant settings
 .claude/
 .gemini/
+CLAUDE.md
 
